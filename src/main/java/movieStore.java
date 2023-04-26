@@ -6,10 +6,12 @@ public class movieStore {
     static final Movie NOT_FOUND =new Movie("NOT_FOUND","notFound",0);
     List<Movie> movies;
 
+    public void add(Movie title) {
+        movies.add(title);
+    }
     public movieStore() {
         movies = new LinkedList<Movie>();
     }
-
     public List<Movie> findByPartialTitle(final String partialTitle) {
         Predicate predicate =new Predicate() {
             public boolean matches(Movie movie1) {
@@ -31,11 +33,6 @@ public class movieStore {
         }
         return result;
     }
-
-    public void add(Movie title) {
-        movies.add(title);
-    }
-
     public List<Movie> findByDirector(final String inputDirector) {
         final Predicate predicate =new Predicate() {
             public boolean matches(Movie movie1) {
