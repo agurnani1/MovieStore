@@ -53,7 +53,6 @@ public class movieStore {
         };
         return findBy(predicate);
     }
-
     interface Predicate{
         boolean matches(Movie movie);
     }
